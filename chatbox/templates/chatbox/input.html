@@ -1,0 +1,17 @@
+{% extends "chatbox/base.html" %}
+
+{% block content %}
+
+    <h1>Input Prompt</h1>
+
+    <form style="" method="post">
+        {% csrf_token %}
+        <div style="display:flex; justify-content:center; align-items:center; flex-direction:column; border-radius: 0.3rem">
+        <textarea style="width: 100%; border-radius: 0.3rem; padding: 0.5rem" placeholder="Write the prompt you want to generate code with." rows="20" name="prompt"></textarea>
+        </div>
+        <div style="display:flex; justify-content:right; align-items:right; margin-top: 0.5rem">
+        <input style="width: 20rem; height: 3.5rem" type="submit" class="btn btn-primary" value="Send"></input>
+        </div>
+    </form>
+
+{% endblock %}  

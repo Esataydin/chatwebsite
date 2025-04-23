@@ -1,0 +1,14 @@
+{% extends "chatbox/base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Output</h1>
+    <h2> {{ title }}</h2>
+    <div style="background-color: hsl(0,0%,22.5%); color: #FD3A3A">
+        {% for codeblock in code_block %}
+            <div class="container">
+                <!-- Need to be in one line or will not render correctly -->
+                <pre><code class="language-python">{{codeblock}}</code></pre>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
