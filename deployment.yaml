@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-local-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-local-app
+  template:
+    metadata:
+      labels:
+        app: my-local-app
+    spec:
+      containers:
+      - name: my-local-container
+        image: my-local-image:latest
+        ports:
+        - containerPort: 8080

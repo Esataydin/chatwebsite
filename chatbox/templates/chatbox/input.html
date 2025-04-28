@@ -7,11 +7,28 @@
     <form style="" method="post">
         {% csrf_token %}
         <div style="display:flex; justify-content:center; align-items:center; flex-direction:column; border-radius: 0.3rem">
-        <textarea style="width: 100%; border-radius: 0.3rem; padding: 0.5rem" placeholder="Write the prompt you want to generate code with." rows="20" name="prompt"></textarea>
+            <textarea style="width: 100%; border-radius: 0.3rem; padding: 0.5rem" placeholder="Write the prompt you want to generate code with." rows="20" name="prompt"></textarea>
         </div>
         <div style="display:flex; justify-content:right; align-items:right; margin-top: 0.5rem">
-        <input style="width: 20rem; height: 3.5rem" type="submit" class="btn btn-primary" value="Send"></input>
+            <input id="send_button" style="width: 20rem; height: 3.5rem" type="submit" class="btn btn-primary" value="Send"></input>
         </div>
     </form>
 
 {% endblock %}  
+
+{% block script %}
+    <script>
+        const emin = document.querySelector("#send_button");
+        console.log(emin);
+        emin.addEventListener("click", change_name);
+        function change_name (e) {
+            e.target.value = "";
+            e.target.className = "loader";
+            e.target.style.width = "70px";
+            e.target.style.height = "70px";
+            e.target.style.padding = "0px";
+            e.target.style.margin = "0px";
+            e.target.style.marginRight = "8rem";
+        }
+    </script>
+{% endblock %}
