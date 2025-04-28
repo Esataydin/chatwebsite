@@ -2,7 +2,7 @@
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 
-version: "3.8"   # it's a good practice to specify version
+version: "3.8"
 
 services:
   ollama:
